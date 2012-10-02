@@ -1,0 +1,13 @@
+.DS_Store
+.*.*.swp
+.*.swp
+*.cmx
+*.cmi
+*.cmo
+*.cma
+*.cmxa
+*.cmx
+*.cmxs
+*.o
+*.obj
+*.a

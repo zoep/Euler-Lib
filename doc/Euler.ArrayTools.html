@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Euler.Info.html">
+<link rel="next" href="Euler.Permutations.html">
+<link rel="Up" href="Euler.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Euler" rel="Chapter" href="Euler.html"><title>Euler.ArrayTools</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Euler.Info.html" title="Euler.Info">Previous</a>
+&nbsp;<a class="up" href="Euler.html" title="Euler">Up</a>
+&nbsp;<a class="post" href="Euler.Permutations.html" title="Euler.Permutations">Next</a>
+</div>
+<h1>Module <a href="type_Euler.ArrayTools.html">Euler.ArrayTools</a></h1>
+<pre><span class="keyword">module</span> ArrayTools: <code class="code"><span class="keyword">sig</span></code> <a href="Euler.ArrayTools.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span id="VALswap"><span class="keyword">val</span> swap</span> : <code class="type">int -> int -> int array -> unit</code></pre><div class="info">
+<code class="code"><span class="constructor">ArrayTools</span>.swap i j tbl</code> swaps elements with index i,j of an Array tbl.
+    
+    Raises Invalid_argument "index out of bounds" if i and/or j are outside the range 0..(Array.length tbl -1)<br>
+</div>
+<pre><span id="VALreverse"><span class="keyword">val</span> reverse</span> : <code class="type">int -> int -> int array -> unit</code></pre><div class="info">
+<code class="code"><span class="constructor">ArrayTools</span>.reverse a b tbl</code> reverses in place a subarray of tbl with length a-b+1 starting at index a
+  Raise Invalid_argument "index out of bounds" if a and/or b are outside the range 0..(Array.length tbl -1) and/or b&gt;a.<br>
+</div>
+</body></html>
