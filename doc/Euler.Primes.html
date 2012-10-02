@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Euler.Permutations.html">
+<link rel="Up" href="Euler.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Euler" rel="Chapter" href="Euler.html"><title>Euler.Primes</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Euler.Permutations.html" title="Euler.Permutations">Previous</a>
+&nbsp;<a class="up" href="Euler.html" title="Euler">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Euler.Primes.html">Euler.Primes</a></h1>
+<pre><span class="keyword">module</span> Primes: <code class="code"><span class="keyword">sig</span></code> <a href="Euler.Primes.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span id="VALisPrime"><span class="keyword">val</span> isPrime</span> : <code class="type">int -> bool</code></pre><div class="info">
+<<<<<<< HEAD
+<code class="code">isPrime n</code> takes an <code class="code">int</code> and returns <code class="code"><span class="keyword">true</span></code> if n is a prime number,
+  * <code class="code"><span class="keyword">false</span></code> otherwise<br>
+</div>
+<pre><span id="VALsieve"><span class="keyword">val</span> sieve</span> : <code class="type">int -> bool array</code></pre><div class="info">
+<code class="code">sieve n</code> takes an <code class="code">int</code> n and returns an <code class="code"><span class="constructor">Array</span></code> of booleans up to n,
+  * <code class="code"><span class="keyword">true</span></code> indicating that the number corresponding to the current index is a prime<br>
+=======
+<code class="code">isPrime n</code> takes an <code class="code">int</code> and returns <code class="code"><span class="keyword">true</span></code> if n is a prime number, false otherwise<br>
+</div>
+<pre><span id="VALsieve"><span class="keyword">val</span> sieve</span> : <code class="type">int -> bool array</code></pre><div class="info">
+<code class="code">sieve n</code> takes an <code class="code">int</code> n and returns an <code class="code"><span class="constructor">Array</span></code> of booleans up to n, true indicating that the number corresponding to the current index is a prime<br>
+>>>>>>> b10b4a039d0efb53d3a04e3afbf65ff528811144
+</div>
+<pre><span id="VALnumDivisors"><span class="keyword">val</span> numDivisors</span> : <code class="type">int -> int</code></pre><div class="info">
+<code class="code">numDivisors n</code> takes an <code class="code">int</code> and returns the number of its divisors.<br>
+</div>
+<pre><span id="VALprimeDecomposition"><span class="keyword">val</span> primeDecomposition</span> : <code class="type">int -> (int * int) list</code></pre><div class="info">
+<code class="code">primeDecomposition n</code> takes an <code class="code">int</code> n and returns a <code class="code"><span class="constructor">List</span></code> of tuples (p<sub class="subscript">i</sub>,e<sub class="subscript">i</sub>) where n = p<sub class="subscript">1</sub>^e<sub class="subscript">1</sub> * p<sub class="subscript">2</sub> ^ e<sub class="subscript">2</sub>...p<sub class="subscript">k</sub> * e<sub class="subscript">k</sub><br>
+</div>
+<pre><span id="VALgcd"><span class="keyword">val</span> gcd</span> : <code class="type">int -> int -> int</code></pre><div class="info">
+<<<<<<< HEAD
+<code class="code">gcd n m</code> takes an <code class="code">int</code> n and an <code class="code">int</code> m and returns an <code class="code">int</code> which is their greatest common divisor<br>
+=======
+<code class="code">gcd n m</code> takes an <code class="code">int</code> a and an <code class="code">int</code> b and returns an <code class="code">int</code> which is their greatest common divisor<br>
+>>>>>>> b10b4a039d0efb53d3a04e3afbf65ff528811144
+</div>
+</body></html>
