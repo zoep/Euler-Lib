@@ -1,5 +1,5 @@
 MODULES = \
-		  euler
+	  euler
 
 MLI = $(MODULES:=.mli)
 CMI = $(MODULES:=.cmi)
@@ -10,10 +10,10 @@ SRC = $(MLI) $(MODULES:=.ml)
 
 all: 
 	ocamlc -a -o euler.cma $(SRC)
-	
+
 opt: 
 	ocamlopt -a -o euler.cmxa $(SRC)
-	
+
 cmxs: opt
 	ocamlopt -shared -linkall euler.cmxa -o euler.cmxs
 
@@ -26,6 +26,7 @@ install:
 
 uninstall:
 	ocamlfind remove euler
+
 
 clean:
 	rm -f *.cmo *.cmx *.o *.obj *.cmi *.cma *.cmxa *.cmxs *.a *.lib ../doc/*.html
