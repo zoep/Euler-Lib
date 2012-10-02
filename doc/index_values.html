@@ -26,16 +26,38 @@ Returns the authors of the library
 Takes a value of type baseTypes and returns a char
 </div>
 </td></tr>
+<tr><td align="left"><br>G</td></tr>
+<tr><td><a href="Euler.Primes.html#VALgcd">gcd</a> [<a href="Euler.Primes.html">Euler.Primes</a>]</td>
+<td><div class="info">
+<code class="code">gcd n m</code> takes an <code class="code">int</code> a and an <code class="code">int</code> b and returns an <code class="code">int</code> which is their greatest common divisor
+</div>
+</td></tr>
 <tr><td align="left"><br>I</td></tr>
 <tr><td><a href="Euler.html#VALint_of_baseTypes">int_of_baseTypes</a> [<a href="Euler.html">Euler</a>]</td>
 <td><div class="info">
 Takes a value of type baseTypes and returns an int
 </div>
 </td></tr>
+<tr><td><a href="Euler.Primes.html#VALisPrime">isPrime</a> [<a href="Euler.Primes.html">Euler.Primes</a>]</td>
+<td><div class="info">
+<code class="code">isPrime n</code> takes an <code class="code">int</code> and returns <code class="code"><span class="keyword">true</span></code> if n is a prime number, false otherwise
+</div>
+</td></tr>
 <tr><td align="left"><br>N</td></tr>
 <tr><td><a href="Euler.Permutations.html#VALnextPermutation">nextPermutation</a> [<a href="Euler.Permutations.html">Euler.Permutations</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">Permutations</span>.<span class="constructor">NextPermutation</span> tbl</code> rearranges the elements of tbl into the lexicographically next greater permutation of elements.
+</div>
+</td></tr>
+<tr><td><a href="Euler.Primes.html#VALnumDivisors">numDivisors</a> [<a href="Euler.Primes.html">Euler.Primes</a>]</td>
+<td><div class="info">
+<code class="code">numDivisors n</code> takes an <code class="code">int</code> and returns the number of its divisors.
+</div>
+</td></tr>
+<tr><td align="left"><br>P</td></tr>
+<tr><td><a href="Euler.Primes.html#VALprimeDecomposition">primeDecomposition</a> [<a href="Euler.Primes.html">Euler.Primes</a>]</td>
+<td><div class="info">
+<code class="code">primeDecomposition n</code> takes an <code class="code">int</code> n and returns a <code class="code"><span class="constructor">List</span></code> of tuples (p<sub class="subscript">i</sub>,e<sub class="subscript">i</sub>) where n = p<sub class="subscript">1</sub>^e<sub class="subscript">1</sub> * p<sub class="subscript">2</sub> ^ e<sub class="subscript">2</sub>...p<sub class="subscript">k</sub> * e<sub class="subscript">k</sub>
 </div>
 </td></tr>
 <tr><td align="left"><br>R</td></tr>
@@ -46,6 +68,11 @@ Takes a value of type baseTypes and returns an int
 </div>
 </td></tr>
 <tr><td align="left"><br>S</td></tr>
+<tr><td><a href="Euler.Primes.html#VALsieve">sieve</a> [<a href="Euler.Primes.html">Euler.Primes</a>]</td>
+<td><div class="info">
+<code class="code">sieve n</code> takes an <code class="code">int</code> n and returns an <code class="code"><span class="constructor">Array</span></code> of booleans up to n, true indicating that the number corresponding to the current index is a prime
+</div>
+</td></tr>
 <tr><td><a href="Euler.ArrayTools.html#VALswap">swap</a> [<a href="Euler.ArrayTools.html">Euler.ArrayTools</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">ArrayTools</span>.swap i j tbl</code> swaps elements with index i,j of an Array tbl.
