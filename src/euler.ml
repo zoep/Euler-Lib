@@ -6,13 +6,32 @@ struct
 
 end
 
+type baseTypes = Int of int | Char of char
+
+let int_of_baseTypes x = match x with
+                        | Int x -> x
+                        | _ -> failwith "requires an int"
+;;
+
+let char_of_baseTypes x = match x with
+                        | Char x ->x
+                        | _ -> failwith "requires a char"
+;;
+
 module ArrayTools =
 struct
-    
+
+  let xor a b =
+    match a,b with 
+      | Char a, Char b -> Char ((Char.chr ((Char.code a) lxor (Char.code b))))
+      | Int a, Int b -> Int (a lxor b)
+      | _,_ -> failwith "invalid arguments to xor"
+  ;;
+
   let swap ind1 ind2 tbl =
-    tbl.(ind1) <- (tbl.(ind1) lxor tbl.(ind2));
-    tbl.(ind2) <- (tbl.(ind1) lxor tbl.(ind2));
-    tbl.(ind1) <- (tbl.(ind1) lxor tbl.(ind2));
+    tbl.(ind1) <- (xor tbl.(ind1) tbl.(ind2));
+    tbl.(ind2) <- (xor tbl.(ind1) tbl.(ind2));
+    tbl.(ind1) <- (xor tbl.(ind1) tbl.(ind2));
   ;;
 
   let rec reverse ind1 ind2 tbl =
