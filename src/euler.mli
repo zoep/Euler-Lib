@@ -46,3 +46,16 @@ sig
   val gcd : int -> int -> int
 (** [gcd n m] takes an [int] n and an [int] m and returns an [int] which is their greatest common divisor*)
 end
+module Primes :
+sig
+  val isPrime : int -> bool
+  (** [isPrime n] takes an [int] and returns [true] if n is a prime number, false otherwise*)
+  val sieve : int -> bool array
+  (** [sieve n] takes an [int] n and returns an [Array] of booleans up to n, true indicating that the number corresponding to the current index is a prime*)
+  val numDivisors : int -> int
+  (** [numDivisors n] takes an [int] and returns the number of its divisors.*)
+  val primeDecomposition : int -> (int * int) list
+  (** [primeDecomposition n] takes an [int] n and returns a [List] of tuples (p{_i},e{_i}) where n = p{_1}^e{_1} * p{_2} ^ e{_2}...p{_k} * e{_k} *)
+  val gcd : int -> int -> int
+(** [gcd n m] takes an [int] a and an [int] b and returns an [int] which is their greatest common divisor*)
+end
