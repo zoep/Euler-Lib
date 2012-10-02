@@ -1,6 +1,0 @@
-name = "Euler"
-version = "0.1"
-authors = "Zoe Paraskevopoulou, Nick Giannarakis"
-description = "Complementary library for Project Euler"
-archive(byte) = "euler.cma"
-archive(native) = "euler.cmxa"
