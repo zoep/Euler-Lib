@@ -16,7 +16,10 @@
 <table>
 <tr><td align="left"><br>A</td></tr>
 <tr><td><a href="Euler.MathTools.html#VALabs">abs</a> [<a href="Euler.MathTools.html">Euler.MathTools</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a more efficient version of the built-in abs function
+</div>
+</td></tr>
 <tr><td><a href="Euler.Info.html#VALauthors">authors</a> [<a href="Euler.Info.html">Euler.Info</a>]</td>
 <td><div class="info">
 Returns the authors of the library
@@ -26,7 +29,7 @@ Returns the authors of the library
 <tr><td><a href="Euler.ArrayTools.html#VALbsearch">bsearch</a> [<a href="Euler.ArrayTools.html">Euler.ArrayTools</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">ArrayTools</span>.bsearch low high value tbl</code> takes two indexes, low and high
-     and performs a binary search for value in <code class="code"><span class="constructor">Array</span> tbl</code>.
+  and performs a binary search for value in <code class="code"><span class="constructor">Array</span> tbl</code>.
 </div>
 </td></tr>
 <tr><td align="left"><br>C</td></tr>
@@ -48,7 +51,11 @@ Takes a value of type baseTypes and returns an <code class="code">int</code>
 </div>
 </td></tr>
 <tr><td><a href="Euler.MathTools.html#VALint_pow">int_pow</a> [<a href="Euler.MathTools.html">Euler.MathTools</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">int_pow a b</code> takes an <code class="code">int a</code> and an <code class="code">int b</code> and returns <code class="code">a</code> raised to
+    <code class="code">b</code>
+</div>
+</td></tr>
 <tr><td><a href="Euler.Primes.html#VALisPrime">isPrime</a> [<a href="Euler.Primes.html">Euler.Primes</a>]</td>
 <td><div class="info">
 <code class="code">isPrime n</code> takes an <code class="code">int</code> and returns <code class="code"><span class="keyword">true</span></code> if n is a prime number, <code class="code"><span class="keyword">false</span></code> otherwise
@@ -75,7 +82,7 @@ Takes a value of type baseTypes and returns an <code class="code">int</code>
 <tr><td><a href="Euler.ArrayTools.html#VALreverse">reverse</a> [<a href="Euler.ArrayTools.html">Euler.ArrayTools</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">ArrayTools</span>.reverse a b tbl</code> reverses in place a subarray of tbl with length a-b+1 starting at index a
- <code class="code"><span class="constructor">Raise</span> <span class="constructor">Invalid_argument</span> <span class="string">"index out of bounds"</span></code> if a and/or b are outside the range 0..(<code class="code"><span class="constructor">Array</span>.length tbl -1</code>) and/or b&gt;a.
+    <code class="code"><span class="constructor">Raise</span> <span class="constructor">Invalid_argument</span> <span class="string">"index out of bounds"</span></code> if a and/or b are outside the range 0..(<code class="code"><span class="constructor">Array</span>.length tbl -1</code>) and/or b&gt;a.
 </div>
 </td></tr>
 <tr><td align="left"><br>S</td></tr>
