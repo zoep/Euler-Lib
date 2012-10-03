@@ -58,7 +58,7 @@ struct
     let rec aux low high =
       if (high < low) then -1
       else
-      let mid = (low + high) / 2 in
+      let mid = (low + high) lsr 1 in
         match tbl.(mid) with
           | elem when elem > value -> aux low (mid - 1)
           | elem when elem <  value -> aux (mid+1) high
