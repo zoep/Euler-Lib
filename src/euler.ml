@@ -18,6 +18,18 @@ let char_of_baseTypes x = match x with
   | _ -> failwith "requires a char"
 ;;
 
+module MathTools =
+struct
+  let int_pow a b = truncate ((float a) ** (float b))
+  ;;
+
+  let abs n = if n < 0 then (lnot n) + 1 else n
+  ;;
+
+end
+
+
+
 module ArrayTools =
 struct
 
@@ -40,6 +52,19 @@ struct
       | 1 -> swap ind1 ind2 tbl
       | _ -> swap ind1 ind2 tbl; 
              reverse (ind1 + 1) (ind2 - 1) tbl
+  ;;
+
+  let bsearch low high value tbl =
+    let rec aux low high =
+      if (high < low) then -1
+      else
+      let mid = (low + high) / 2 in
+        match tbl.(mid) with
+          | elem when elem > value -> aux low (mid - 1)
+          | elem when elem <  value -> aux (mid+1) high
+          | _ -> mid
+    in
+      aux low high
   ;;
 
 end

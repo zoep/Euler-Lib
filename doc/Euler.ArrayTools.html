@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Euler.Info.html">
+<link rel="previous" href="Euler.MathTools.html">
 <link rel="next" href="Euler.Permutations.html">
 <link rel="Up" href="Euler.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
@@ -14,7 +14,7 @@
 <link title="Euler" rel="Chapter" href="Euler.html"><title>Euler.ArrayTools</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Euler.Info.html" title="Euler.Info">Previous</a>
+<div class="navbar"><a class="pre" href="Euler.MathTools.html" title="Euler.MathTools">Previous</a>
 &nbsp;<a class="up" href="Euler.html" title="Euler">Up</a>
 &nbsp;<a class="post" href="Euler.Permutations.html" title="Euler.Permutations">Next</a>
 </div>
@@ -27,5 +27,9 @@
 <pre><span id="VALreverse"><span class="keyword">val</span> reverse</span> : <code class="type">int -> int -> <a href="Euler.html#TYPEbaseTypes">Euler.baseTypes</a> array -> unit</code></pre><div class="info">
 <code class="code"><span class="constructor">ArrayTools</span>.reverse a b tbl</code> reverses in place a subarray of tbl with length a-b+1 starting at index a
  <code class="code"><span class="constructor">Raise</span> <span class="constructor">Invalid_argument</span> <span class="string">"index out of bounds"</span></code> if a and/or b are outside the range 0..(<code class="code"><span class="constructor">Array</span>.length tbl -1</code>) and/or b&gt;a.<br>
+</div>
+<pre><span id="VALbsearch"><span class="keyword">val</span> bsearch</span> : <code class="type">int -> int -> 'a -> 'a array -> int</code></pre><div class="info">
+<code class="code"><span class="constructor">ArrayTools</span>.bsearch low high value tbl</code> takes two indexes, low and high
+     and performs a binary search for value in <code class="code"><span class="constructor">Array</span> tbl</code>. Return value is -1 if value is not found in the <code class="code"><span class="constructor">Array</span></code> or the index value      was found at.<br>
 </div>
 </body></html>
