@@ -34,11 +34,9 @@ end
 module Primes :
 sig
   val isPrime : int -> bool
-  (** [isPrime n] takes an [int] and returns [true] if n is a prime number,
-  * [false] otherwise*)
+  (** [isPrime n] takes an [int] and returns [true] if n is a prime number, [false] otherwise*)
   val sieve : int -> bool array
-  (** [sieve n] takes an [int] n and returns an [Array] of booleans up to n,
-  * [true] indicating that the number corresponding to the current index is a prime*)
+  (** [sieve n] takes an [int] n and returns an [Array] of booleans up to n, [true] indicating that the number corresponding to the current index is a prime*)
   val numDivisors : int -> int
   (** [numDivisors n] takes an [int] and returns the number of its divisors.*)
   val primeDecomposition : int -> (int * int) list
