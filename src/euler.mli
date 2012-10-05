@@ -21,6 +21,9 @@ module MathTools :
      [b]*)
     val abs : int -> int
     (** a more efficient version of the built-in abs function*)
+    val digitize : int -> int list
+    (** [digitize n] takes an [int n] and returns an [int list] containing the
+    digits of n.*)
   end
 
 module ArrayTools :
@@ -35,6 +38,18 @@ sig
   (** [ArrayTools.bsearch low high value tbl] takes two indexes, low and high
      and performs a binary search for value in [Array tbl]. Return value is -1 if value is not found in the [Array] or the index value      was found at.*) 
 end
+
+module ListTools :
+  sig
+    val map : ('a -> 'b) -> 'a list -> 'b list
+    (** Tail recursive version of map, slower but safe for large lists*)
+    val append : 'a list -> 'a list -> 'a list
+    (** Optimized append of two lists*)
+    val mklist : int -> int -> int list
+    (** [mklist s f] will create an [int list] containing [[s;s+1;s+2...f]].
+    Returns empty [list] if [s > f]. Tail recursive and fast.*)
+  end
+
 module Permutations :
 sig 
   exception LastPermutation 
@@ -42,7 +57,6 @@ sig
 (**[Permutations.NextPermutation tbl] rearranges the elements of tbl into the lexicographically next greater permutation of elements. 
   [Raise LastPermutation] if tbl is the last permutation*)
 end
-
 
 module Primes :
 sig
