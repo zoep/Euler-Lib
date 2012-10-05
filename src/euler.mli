@@ -17,10 +17,10 @@ val char_of_baseTypes : baseTypes -> char
 module MathTools :
   sig 
     val int_pow : int -> int -> int 
-    (*[int_pow a b] takes an [int a] and an [int b] and returns [a] raised to
+    (**[int_pow a b] takes an [int a] and an [int b] and returns [a] raised to
      [b]*)
     val abs : int -> int
-    (* a more efficient version of the built-in abs function*)
+    (** a more efficient version of the built-in abs function*)
   end
 
 module ArrayTools :
