@@ -28,10 +28,10 @@ module MathTools :
 
 module ArrayTools :
 sig
-  val swap : int -> int -> baseTypes array -> unit 
+  val swap : int -> int -> int array -> unit 
   (**[ArrayTools.swap i j tbl] swaps elements with index i,j of an [Array tbl].
     Raises [Invalid_argument "index out of bounds"] if i and/or j are outside the range 0..[(Array.length tbl -1])*)
-  val reverse : int -> int -> baseTypes array -> unit 
+  val reverse : int -> int -> int array -> unit 
 (**[ArrayTools.reverse a b tbl] reverses in place a subarray of tbl with length a-b+1 starting at index a
  [Raise Invalid_argument "index out of bounds"] if a and/or b are outside the range 0..([Array.length tbl -1]) and/or b>a.*)
   val bsearch : int -> int -> 'a -> 'a array -> int
