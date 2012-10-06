@@ -93,6 +93,35 @@ struct
       else aux f []
   ;;
 
+  let rec pairs xs ys theList acc =
+    match xs,ys with
+      | [], _ -> List.rev acc
+      | x :: xs, _ -> pairs xs theList theList acc
+      | x :: xs, y :: ys -> pairs (x :: xs) ys theList ((x,y) :: acc)
+  ;;
+
+  let max xs =
+     let rec aux xs max =
+      match xs with
+        | [] -> max
+        | x :: xs -> aux xs (if x > max then x else max)
+     in
+    match xs with
+      | [] -> None
+      | (x::xs) -> Some (aux xs x)
+  ;;
+
+  let min xs =
+     let rec aux xs min =
+      match xs with
+        | [] -> min
+        | x :: xs -> aux xs (if x < min then x else max)
+     in
+    match xs with
+      | [] -> None
+      | (x::xs) -> Some (aux xs x)
+  ;;
+
 end
 
 

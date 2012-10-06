@@ -7,13 +7,6 @@ sig
 (** Returns the authors of the library*)
 end
 
-type baseTypes = Int of int | Char of char
-
-val int_of_baseTypes : baseTypes -> int
-(**Takes a value of type baseTypes and returns an [int]*)
-val char_of_baseTypes : baseTypes -> char
-(**Takes a value of type baseTypes and returns a [char]*)
-
 module MathTools :
   sig 
     val int_pow : int -> int -> int 
@@ -48,12 +41,15 @@ module ListTools :
     val mklist : int -> int -> int list
     (** [mklist s f] will create an [int list] containing [[s;s+1;s+2...f]].
     Returns empty [list] if [s > f]. Tail recursive and fast.*)
+    val pairs : 'a list -> 'b list -> 'b list -> ('a * 'b) list -> ('a * 'b) list
+    (** [pairs xs xs xs []] returns a [list] containing a tuple [(x,y)] with all
+       possible combinations of elements of [xs]*)
   end
 
 module Permutations :
 sig 
   exception LastPermutation 
-  val nextPermutation : baseTypes array -> unit 
+  val nextPermutation : int array -> unit 
 (**[Permutations.NextPermutation tbl] rearranges the elements of tbl into the lexicographically next greater permutation of elements. 
   [Raise LastPermutation] if tbl is the last permutation*)
 end
