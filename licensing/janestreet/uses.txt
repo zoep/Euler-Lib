@@ -1,0 +1,3 @@
+Euler-Lib uses code taken from Jane Street's Core Library under the Apache 2.0 license in the following locations:
+
+- The append function in Euler.ListTools module was based on Jane Street's core implementation of core.list append function.
