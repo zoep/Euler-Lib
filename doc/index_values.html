@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
@@ -37,12 +36,6 @@ Returns the authors of the library
      and performs a binary search for value in <code class="code"><span class="constructor">Array</span> tbl</code>.
 </div>
 </td></tr>
-<tr><td align="left"><br>C</td></tr>
-<tr><td><a href="Euler.html#VALchar_of_baseTypes">char_of_baseTypes</a> [<a href="Euler.html">Euler</a>]</td>
-<td><div class="info">
-Takes a value of type baseTypes and returns a <code class="code">char</code>
-</div>
-</td></tr>
 <tr><td align="left"><br>D</td></tr>
 <tr><td><a href="Euler.MathTools.html#VALdigitize">digitize</a> [<a href="Euler.MathTools.html">Euler.MathTools</a>]</td>
 <td><div class="info">
@@ -57,11 +50,6 @@ Takes a value of type baseTypes and returns a <code class="code">char</code>
 </div>
 </td></tr>
 <tr><td align="left"><br>I</td></tr>
-<tr><td><a href="Euler.html#VALint_of_baseTypes">int_of_baseTypes</a> [<a href="Euler.html">Euler</a>]</td>
-<td><div class="info">
-Takes a value of type baseTypes and returns an <code class="code">int</code>
-</div>
-</td></tr>
 <tr><td><a href="Euler.MathTools.html#VALint_pow">int_pow</a> [<a href="Euler.MathTools.html">Euler.MathTools</a>]</td>
 <td><div class="info">
 <code class="code">int_pow a b</code> takes an <code class="code">int a</code> and an <code class="code">int b</code> and returns <code class="code">a</code> raised to
@@ -96,6 +84,12 @@ Tail recursive version of map, slower but safe for large lists
 </div>
 </td></tr>
 <tr><td align="left"><br>P</td></tr>
+<tr><td><a href="Euler.ListTools.html#VALpairs">pairs</a> [<a href="Euler.ListTools.html">Euler.ListTools</a>]</td>
+<td><div class="info">
+<code class="code">pairs xs xs xs []</code> returns a <code class="code">list</code> containing a tuple <code class="code">(x,y)</code> with all
+       possible combinations of elements of <code class="code">xs</code>
+</div>
+</td></tr>
 <tr><td><a href="Euler.Primes.html#VALprimeDecomposition">primeDecomposition</a> [<a href="Euler.Primes.html">Euler.Primes</a>]</td>
 <td><div class="info">
 <code class="code">primeDecomposition n</code> takes an <code class="code">int</code> n and returns a <code class="code"><span class="constructor">List</span></code> of tuples (p<sub class="subscript">i</sub>,e<sub class="subscript">i</sub>) where n = p<sub class="subscript">1</sub>^e<sub class="subscript">1</sub> * p<sub class="subscript">2</sub> ^ e<sub class="subscript">2</sub>...p<sub class="subscript">k</sub> * e<sub class="subscript">k</sub>

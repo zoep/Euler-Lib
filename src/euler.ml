@@ -23,6 +23,13 @@ struct
     in aux x []
   ;;
 
+  let isEven n =
+    (n land 1) = 0
+  ;;
+
+  let isOdd n =  not (isEven n)
+  ;;
+
 end
 
 
