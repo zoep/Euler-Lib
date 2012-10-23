@@ -6,17 +6,6 @@ struct
 
 end
 
-type baseTypes = Int of int | Char of char
-
-let int_of_baseTypes x = match x with
-  | Int x -> x
-  | _ -> failwith "requires an int"
-;;
-
-let char_of_baseTypes x = match x with
-  | Char x ->x
-  | _ -> failwith "requires a char"
-;;
 
 module MathTools =
 struct
@@ -26,24 +15,31 @@ struct
   let abs n = if n < 0 then (lnot n) + 1 else n
   ;;
 
-end
+  let digitize x =
+    let rec aux num acc =
+      match num with 
+        | n when n<10 -> (n::acc)
+        | n -> aux (n/10) ((n mod 10)::acc)
+    in aux x []
+  ;;
 
+  let isEven n =
+    (n land 1) = 0
+  ;;
+
+  let isOdd n =  not (isEven n)
+  ;;
+
+end
 
 
 module ArrayTools =
 struct
 
-  let xor a b =
-    match a,b with 
-      | Char a, Char b -> Char ((Char.chr ((Char.code a) lxor (Char.code b))))
-      | Int a, Int b -> Int (a lxor b)
-      | _,_ -> failwith "invalid arguments to xor"
-  ;;
-
   let swap ind1 ind2 tbl =
-    tbl.(ind1) <- (xor tbl.(ind1) tbl.(ind2));
-    tbl.(ind2) <- (xor tbl.(ind1) tbl.(ind2));
-    tbl.(ind1) <- (xor tbl.(ind1) tbl.(ind2));
+    tbl.(ind1) <- (tbl.(ind1) lxor tbl.(ind2));
+    tbl.(ind2) <- (tbl.(ind1) lxor tbl.(ind2));
+    tbl.(ind1) <- (tbl.(ind1) lxor tbl.(ind2));
   ;;
 
   let rec reverse ind1 ind2 tbl =
@@ -58,16 +54,84 @@ struct
     let rec aux low high =
       if (high < low) then -1
       else
-      let mid = (low + high) lsr 1 in
-        match tbl.(mid) with
-          | elem when elem > value -> aux low (mid - 1)
-          | elem when elem <  value -> aux (mid+1) high
-          | _ -> mid
+        let mid = (low + high) lsr 1 in
+          match tbl.(mid) with
+            | elem when elem > value -> aux low (mid - 1)
+            | elem when elem <  value -> aux (mid+1) high
+            | _ -> mid
     in
       aux low high
   ;;
 
 end
+
+module ListTools =
+struct
+
+  let map f l = List.rev (List.rev_map f l)
+  ;;
+
+  (*From Jane Street's core, looked so fast*)   
+  let append l1 l2 =
+    let heap_append l1 l2 = List.rev_append (List.rev l1) l2
+    in
+    let rec stack_append l1 l2 cnt =
+      match l1 with
+        | [] -> l2
+        | [x1] -> x1 :: l2
+        | [x1; x2] -> x1 :: x2 :: l2
+        | [x1; x2; x3] -> x1 :: x2 :: x3 :: l2
+        | [x1; x2; x3; x4] -> x1 :: x2 :: x3 :: x4 :: l2
+        | x1 :: x2 :: x3 :: x4 :: x5 :: tl -> x1 :: x2 :: x3 :: x4 :: x5 :: (if (cnt > 1000) 
+                                                                             then heap_append tl l2 
+                                                                             else stack_append tl l2 (cnt + 1) )
+    in stack_append l1 l2 0
+  ;;
+
+
+  let mklist s f =
+    let rec aux i acc =
+      match i with
+        | i when i = s -> i :: acc
+        | i -> aux (i-1) (i :: acc)
+    in
+      if (s > f) 
+      then [] 
+      else aux f []
+  ;;
+
+  let rec pairs xs ys theList acc =
+    match xs,ys with
+      | [], _ -> List.rev acc
+      | x :: xs, _ -> pairs xs theList theList acc
+      | x :: xs, y :: ys -> pairs (x :: xs) ys theList ((x,y) :: acc)
+  ;;
+
+  let max xs =
+     let rec aux xs max =
+      match xs with
+        | [] -> max
+        | x :: xs -> aux xs (if x > max then x else max)
+     in
+    match xs with
+      | [] -> None
+      | (x::xs) -> Some (aux xs x)
+  ;;
+
+  let min xs =
+     let rec aux xs min =
+      match xs with
+        | [] -> min
+        | x :: xs -> aux xs (if x < min then x else max)
+     in
+    match xs with
+      | [] -> None
+      | (x::xs) -> Some (aux xs x)
+  ;;
+
+end
+
+
 
 module Permutations =
 struct
